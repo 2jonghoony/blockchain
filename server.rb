@@ -6,7 +6,7 @@ require './block'
 b = Blockchain.new
 
 get '/' do
-	message = ""
+	message = "<center>"
 
 	b.all_chains.each do |a|
 		message << "번호는 : " + a["index"].to_s + "<br>"
@@ -16,6 +16,7 @@ get '/' do
 		message << "내 주소는 : " + Digest::SHA256.hexdigest(a.to_s) + "<br>"
 		message << "<hr>"
 	end
+	message << "</center>"
 	message
 end
 
