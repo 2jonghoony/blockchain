@@ -10,5 +10,5 @@ get '/' do
 end
 
 get '/mine' do
-	"마이닝 중입니다."
+	b.mining.to_s
 end
