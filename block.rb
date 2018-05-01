@@ -32,6 +32,7 @@ class Blockchain
 		"previous_address" => Digest::SHA256.hexdigest(last_block.to_s),
 		"transactions" => @trans
 	}
+	@trans = []
 	@chain << block
 
 	history.size
