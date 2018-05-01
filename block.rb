@@ -3,7 +3,13 @@
 class Blockchain
 	def initialize
 		@chain = []
+		@trans = []
 	end
+
+	def make_a_trans(sender, rcpt, amount)
+		"거래가 일어났습니다."
+	end
+
 	def mining
 
 	history = []

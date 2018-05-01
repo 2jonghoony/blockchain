@@ -23,3 +23,7 @@ end
 get '/mine' do
 	b.mining.to_s
 end
+
+get '/trans' do
+	b.make_a_trans(params["sender"], params["rcpt"], params["amount"])
+end
