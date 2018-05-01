@@ -1,4 +1,4 @@
-# encoding: UTF-8
+require 'securerandom'
 
 class Blockchain
 	def initialize
@@ -7,7 +7,7 @@ class Blockchain
 	end
 
 	def make_a_wallet
-		
+		SecureRandom.uuid.gsub("-", "")
 	end
 
 	def make_a_trans(s, r, a)
