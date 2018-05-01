@@ -4,10 +4,13 @@ class Blockchain
 	def initialize
 		@chain = []
 		@trans = []
+		@wallet = {}
 	end
 
 	def make_a_wallet
-		SecureRandom.uuid.gsub("-", "")
+		address = SecureRandom.uuid.gsub("-", "") 
+		@wallet[address] = 100
+		@wallet
 	end
 
 	def make_a_trans(s, r, a)

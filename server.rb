@@ -30,5 +30,5 @@ get '/trans' do
 end
 
 get '/new_wallet' do
-	b.make_a_wallet
+	b.make_a_wallet.to_s
 end
