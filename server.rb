@@ -28,3 +28,7 @@ end
 get '/trans' do
 	b.make_a_trans(params["sender"], params["rcpt"], params["amount"])
 end
+
+get '/new_wallet' do
+	b.make_a_wallet
+end

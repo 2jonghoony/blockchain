@@ -6,6 +6,10 @@ class Blockchain
 		@trans = []
 	end
 
+	def make_a_wallet
+		
+	end
+
 	def make_a_trans(s, r, a)
 		trans = {
 			"sender" => s,
@@ -20,7 +24,7 @@ class Blockchain
 
 	history = []
 	begin
-		nonce = rand(100000)
+		nonce = rand(100000000)
 		history << nonce
 		hashed = Digest::SHA256.hexdigest(nonce.to_s)
 	end while hashed[0..3] != "0000"
