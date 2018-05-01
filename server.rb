@@ -32,3 +32,7 @@ end
 get '/new_wallet' do
 	b.make_a_wallet.to_s
 end
+
+get '/wallet_list' do
+	b.wallet_list.to_s
+end
