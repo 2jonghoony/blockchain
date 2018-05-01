@@ -7,7 +7,13 @@ class Blockchain
 	end
 
 	def make_a_trans(s, r, a)
-		"거래가 일어났습니다." + s + " " + r + " " + a
+		trans = {
+			"sender" => s,
+			"rcpt" => r,
+			"amount" => a
+		}
+		@trans << trans
+		"다음 블럭에 쓰여집니다." + (@chain.length + 1).to_s
 	end
 
 	def mining
