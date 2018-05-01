@@ -6,8 +6,8 @@ class Blockchain
 		@trans = []
 	end
 
-	def make_a_trans(sender, rcpt, amount)
-		"거래가 일어났습니다."
+	def make_a_trans(s, r, a)
+		"거래가 일어났습니다." + s + " " + r + " " + a
 	end
 
 	def mining
