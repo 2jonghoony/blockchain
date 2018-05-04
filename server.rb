@@ -14,6 +14,12 @@ get '/all_node' do
 	b.all_node.to_s
 end
 
+get '/rcv_chain' do
+	rcv_chain = params["chain"]
+	extracted = JSON.parse(rcv_chain)
+	b.add_block(extracted)
+end
+
 get '/number_of_blocks' do
 	b.all_chains.size.to_s
 end
