@@ -11,6 +11,8 @@ class Blockchain
 
 	def add_port(port)
 		@node << port
+		@node.compact!
+		@node.uniq!
 	end
 
 	def all_node
