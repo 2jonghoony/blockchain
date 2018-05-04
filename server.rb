@@ -5,6 +5,15 @@ require './block'
 
 b = Blockchain.new
 
+get '/add_node' do
+	port = params["port"]
+	b.add_port(port)
+end
+
+get '/all_node' do
+	b.all_node.to_s
+end
+
 get '/number_of_blocks' do
 	b.all_chains.size.to_s
 end

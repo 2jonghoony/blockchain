@@ -6,10 +6,24 @@ class Blockchain
 		@chain = []
 		@trans = []
 		@wallet = {}
+		@node = []
+	end
+
+	def add_port(port)
+		@node << port
+	end
+
+	def all_node
+		@node
 	end
 
 	def ask_block
-		HTTParty.get("http://localhost:4567/number_of_blocks").body
+		@node.each do |n|
+			n_block = HTTParty.get("http://localhost:"+n+"/number_of_blocks").body
+			if @chain.length < n_block.to_i
+				@chain = []
+			end
+		end
 	end
 
 	def wallet_list
