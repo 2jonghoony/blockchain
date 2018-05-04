@@ -1,10 +1,15 @@
 require 'securerandom'
+require 'httparty'
 
 class Blockchain
 	def initialize
 		@chain = []
 		@trans = []
 		@wallet = {}
+	end
+
+	def ask_block
+		HTTParty.get("http://localhost:4567/number_of_blocks").body
 	end
 
 	def wallet_list

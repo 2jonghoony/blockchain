@@ -5,6 +5,14 @@ require './block'
 
 b = Blockchain.new
 
+get '/number_of_blocks' do
+	b.all_chains.size.to_s
+end
+
+get '/ask' do
+	b.ask_block
+end
+
 get '/' do
 	message = "<center>"
 
